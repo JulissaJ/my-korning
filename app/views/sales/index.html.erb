@@ -1,0 +1,37 @@
+<h1>Quarterly Sales</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Invoice Number</th>
+      <th>Units Sold</th>
+      <!-- More attributes here... -->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.sale_date %></td>
+        <td><%= sale.sale_amount %></td>
+        <td><%= sale.invoices[0].invoice_number %></td>
+        <td><%= sale.units_sold %></td>
+        <!-- More attributes here... -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- create_table "sales", force: true do |t|
+    t.date     "sale_date"
+    t.decimal  "sale_amount"
+    t.integer  "units_sold"
+    t.string   "invoice_frequency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "employee_id",       null: false
+    t.integer  "product_id",        null: false
+    t.integer  "customer_id",       null: false
+  end -->

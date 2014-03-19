@@ -1,0 +1,23 @@
+<h1>Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th>Account Number</th>
+      <th>Website</th>
+      <!-- More attributes here... -->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%=  customer.account_no %></td>
+        <td><%= link_to customer.website, customer.website %></td>
+        <!-- More attributes here... -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
